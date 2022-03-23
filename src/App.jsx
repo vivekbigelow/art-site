@@ -1,44 +1,57 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import smiley from '/src/assets/static/images/smiley.png';
 import './App.css'
+import Home from './components/Home';
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const mockData = [
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 1
+    },
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 2
+    },
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 3
+    },
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 4
+    },
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 5
+    },
+    {
+      title: "Spastic Bombastic",
+      year: '2022',
+      medium: 'Music',
+      image: smiley,
+      id: 6
+    },
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+      <Home data={mockData} />
+    </>
   )
 }
 
