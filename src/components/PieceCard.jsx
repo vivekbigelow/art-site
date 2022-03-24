@@ -1,25 +1,26 @@
 import React from 'react';
+import { Heading, Text, Link, Flex, Spacer, Image, Box } from '@chakra-ui/react';
 
 const PieceCard = ({ number, title, medium, image, year }) => {
   return (
     <>
-      <div className='container'>
-        <h1>{number}. {title} - {medium}</h1>
-        <img className='image' src={image} />
-        <div className='footer'>
-          <p className='year'>{year}</p>
-          <a className='link' href='google.com'>View</a>
-        </div>
-      </div>
+      <Box className='container'>
+        <Heading fontFamily='Source Code Pro' fontSize='2xl'>{number}. {title} - {medium}</Heading>
+        <Image className='image' src={image} />
+        <Flex direction="row">
+          <Text fontSize="25px">{year}</Text>
+          <Spacer />
+          <Text fontSize="25px">
+            <Link className="piece-card-link" color="blue" href='https://google.com' isExternal>Details</Link>
+          </Text>
+        </Flex>
+      </Box>
 
       <style jsx="true">{`
         .container {
           border : 2px black solid;
-          padding: 10px 40px
-        }
-
-        h1{
-          font-size: 50px;
+          padding: 10px 40px;
+          font-family: "Source Code Pro", Courier, monospace;
         }
 
         .image{
@@ -30,20 +31,12 @@ const PieceCard = ({ number, title, medium, image, year }) => {
           margin-bottom: 50px;
           width: 50%;
           width: 200px;
-          height:200px;
+          height: 200px;
         }
 
-        .footer{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        .year,.link{
-          font-size: 25px;         
-        }
+        {/* .piece-card-link:visited{
+          color: blue;
+        } */}
 
       `}</style>
     </>
