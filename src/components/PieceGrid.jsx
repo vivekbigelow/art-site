@@ -1,14 +1,16 @@
 import React from 'react';
 import PieceCard from './PieceCard';
+import { Grid, GridItem } from '@chakra-ui/react';
 
 const PieceGrid = ({ data }) => {
   return (
-    <div className='container'>
+    <Grid templateColumns='repeat(3, 1fr)'>
       {data.map((piece, pieceNumber) => (
-        <PieceCard key={piece.id} number={pieceNumber + 1} title={piece.title} image={piece.image} year={piece.year} medium={piece.medium} />
-
+        <GridItem>
+          <PieceCard key={piece.id} number={pieceNumber + 1} title={piece.title} image={piece.image} year={piece.year} medium={piece.medium} />
+        </GridItem>
       ))}
-    </div>
+    </Grid>
   )
 };
 

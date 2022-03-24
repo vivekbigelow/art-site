@@ -1,6 +1,7 @@
 import smiley from '/src/assets/static/images/smiley.png';
 import './App.css'
 import Home from './components/Home';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
 
@@ -50,7 +51,9 @@ function App() {
   ]
   return (
     <>
-      <Home data={mockData} />
+      <ChakraProvider>
+        <Home data={mockData} />
+      </ChakraProvider>
     </>
   )
 }
