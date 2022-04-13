@@ -1,61 +1,25 @@
-import smiley from '/src/assets/static/images/smiley.png';
-import './App.css'
-import Home from './components/Home';
-import { ChakraProvider } from '@chakra-ui/react'
+import "./App.css";
+import Home from "./components/Home";
+import { ChakraProvider } from "@chakra-ui/react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function App() {
-
-  const mockData = [
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 1
-    },
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 2
-    },
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 3
-    },
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 4
-    },
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 5
-    },
-    {
-      title: "Spastic Bombastic",
-      year: '2022',
-      medium: 'Music',
-      image: smiley,
-      id: 6
-    },
-  ]
+  const [cards, setCards] = useState([])
+  useEffect(() => {
+    console.log('effect')
+    axios.get("http://localhost:3001/cards").then((response) => {
+      console.log("promise fulfilled");
+      setCards(response.data);
+    });
+  }, [])
+  console.log('render', cards.length, 'cards');
+  
   return (
     <>
-      <ChakraProvider>
-        <Home data={mockData} />
-      </ChakraProvider>
+      <ChakraProvider><Home data={cards} /></ChakraProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

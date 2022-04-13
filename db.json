@@ -1,0 +1,46 @@
+{
+  "cards":[
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 1
+    },
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 2
+    },
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 3
+    },
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 4
+    },
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 5
+    },
+    {
+      "title": "Spastic Bombastic",
+      "year": "2022",
+      "medium": "Music",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 6
+    }
+  ]
+}

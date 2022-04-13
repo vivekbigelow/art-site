@@ -2,6 +2,7 @@ import React from 'react';
 import PieceGrid from './PieceGrid';
 import { Heading, Flex, Spacer } from '@chakra-ui/react';
 
+
 const Home = ({ data }) => {
   return (
     <>
