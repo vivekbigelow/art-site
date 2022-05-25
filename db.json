@@ -1,5 +1,5 @@
 {
-  "cards":[
+  "cards": [
     {
       "title": "Spastic Bombastic",
       "year": "2022",
@@ -41,6 +41,27 @@
       "medium": "Music",
       "image": "/src/assets/static/images/smiley.png",
       "id": 6
+    },
+    {
+      "title": "Collage #5",
+      "year": "2022",
+      "medium": "Digital Collage",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 7
+    },
+    {
+      "title": "test",
+      "year": "test",
+      "medium": "test",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 8
+    },
+    {
+      "title": "A real Title",
+      "year": "2022",
+      "medium": "Digital Collage",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 9
     }
   ]
 }
