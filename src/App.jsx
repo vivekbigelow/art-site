@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [cards, setCards] = useState([])
+  const [pieces, setPieces] = useState([])
   const [newPiece, setNewPiece] = useState({})
 
   const addPiece = (event) => {
@@ -20,7 +20,7 @@ function App() {
     axios
     .post("http://localhost:3001/cards", pieceObject)
     .then(response => {
-      setCards(cards.concat(response.data))
+      setPieces(pieces.concat(response.data))
     })
 
     setNewPiece({})
@@ -38,7 +38,7 @@ function App() {
     .get("http://localhost:3001/cards")
     .then((response) => {
       // console.log("promise fulfilled");
-      setCards(response.data);
+      setPieces(response.data);
     });
   }, [])
   //console.log('render', cards.length, 'cards');
