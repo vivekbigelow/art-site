@@ -1,7 +1,9 @@
 import React from 'react';
-import { Heading, Text, Link, Flex, Spacer, Image, Box } from '@chakra-ui/react';
+import { Link, useLocation } from 'react-router-dom';
+import { Heading, Text, Flex, Spacer, Image, Box } from '@chakra-ui/react';
 
 const PieceCard = ({ number, title, medium, image, year }) => {
+  let location = useLocation();
   return (
     <>
       <Box className='container'>
@@ -11,7 +13,7 @@ const PieceCard = ({ number, title, medium, image, year }) => {
           <Text fontSize="25px">{year}</Text>
           <Spacer />
           <Text fontSize="25px">
-            <Link className="piece-card-link" color="blue" href='https://google.com' isExternal>Details</Link>
+            <Link className="piece-card-link" to={location.pathname + `/${number}`}>Details</Link>
           </Text>
         </Flex>
       </Box>
@@ -34,9 +36,9 @@ const PieceCard = ({ number, title, medium, image, year }) => {
           height: 200px;
         }
 
-        {/* .piece-card-link:visited{
+        .piece-card-link{
           color: blue;
-        } */}
+        } 
 
       `}</style>
     </>
