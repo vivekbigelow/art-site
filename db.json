@@ -62,6 +62,13 @@
       "medium": "Digital Collage",
       "image": "/src/assets/static/images/smiley.png",
       "id": 9
+    },
+    {
+      "title": "ttit",
+      "year": "titi",
+      "medium": "titi",
+      "image": "/src/assets/static/images/smiley.png",
+      "id": 10
     }
   ]
 }
