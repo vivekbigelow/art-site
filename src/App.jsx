@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     // console.log('effect')
-    axios.get("http://localhost:3001/cards").then((response) => {
+    axios.get("http://localhost:3001/api/pieces").then((response) => {
       // console.log("promise fulfilled");
       setPieces(response.data);
     });
@@ -23,8 +23,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="pieces" element={<Pieces data={pieces}/>} />
-            <Route path="pieces/:pieceId" element= {<Details />} /> 
+            <Route path="pieces" element={<Pieces data={pieces} />} />
+            <Route path="pieces/:pieceId" element={<Details />} />
           </Route>
         </Routes>
       </BrowserRouter>
