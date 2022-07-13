@@ -6,7 +6,7 @@ const Pieces = ({ data }) => {
   return (
     <>
       <PieceGrid data={data} />
-      <PieceForm />
+      <PieceForm data={data} />
     </>
   );
 };

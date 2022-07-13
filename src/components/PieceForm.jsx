@@ -1,8 +1,18 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import pieceService from "../services/pieceService"
 
 const PieceForm = () => {
+  const [pieces, setPieces] = useState([]);
   const [newPiece, setNewPiece] = useState({ title: "", medium: "", year: "" });
+
+
+  useEffect(() => {
+    pieceService
+      .getAll()
+      .then(initialPieces => {
+        setPieces(initialPieces)
+      })
+  }, [pieces]);
 
   const addPiece = (event) => {
     event.preventDefault();
@@ -14,11 +24,12 @@ const PieceForm = () => {
       image: "/src/assets/static/images/smiley.png",
     };
 
-    axios.post("http://localhost:3001/cards", pieceObject).then((response) => {
-      setPieces(pieces.concat(response.data));
-    });
-
-    setNewPiece({ title: "", medium: "", year: "" });
+    pieceService
+      .create(pieceObject)
+      .then(returnedPiece => {
+        setPieces(pieces.concat(returnedPiece))
+        setNewPiece({ title: "", medium: "", year: "" });
+      })
   };
 
   const handleTitleChange = (e) => {
@@ -39,29 +50,29 @@ const PieceForm = () => {
     setNewPiece((newPiece) => ({ ...newPiece, ...updatedValue }));
   };
 
-  return ( 
+  return (
     <form onSubmit={addPiece}>
-        <label for="title">Title:</label>
-        <input
-          value={newPiece.title}
-          name="title"
-          onChange={handleTitleChange}
-        />
-        <label for="medium">Medium:</label>
-        <input
-          value={newPiece.medium}
-          name="medium"
-          onChange={handleMediumChange}
-        />
-        <label for="year">Year:</label>
-        <input
-          value={newPiece.year}
-          name="year"
-          onChange={handleYearChange}
-        />
-        <button type="submit">Add New Piece</button>
+      <label for="title">Title:</label>
+      <input
+        value={newPiece.title}
+        name="title"
+        onChange={handleTitleChange}
+      />
+      <label for="medium">Medium:</label>
+      <input
+        value={newPiece.medium}
+        name="medium"
+        onChange={handleMediumChange}
+      />
+      <label for="year">Year:</label>
+      <input
+        value={newPiece.year}
+        name="year"
+        onChange={handleYearChange}
+      />
+      <button type="submit">Add New Piece</button>
     </form>
   )
-  };
+};
 
 export default PieceForm;
